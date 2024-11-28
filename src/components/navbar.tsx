@@ -46,7 +46,7 @@ export default function NavBar() {
             setWordsLength(5);
           }}
         >
-          5 words
+          5
         </ButtonLength>
         <ButtonLength
           onMouseDown={(e) => {
@@ -55,7 +55,7 @@ export default function NavBar() {
             handleChangeWordsLength(10);
           }}
         >
-          10 words
+          10
         </ButtonLength>
         <ButtonLength
           onMouseDown={(e) => {
@@ -64,7 +64,7 @@ export default function NavBar() {
             handleChangeWordsLength(15);
           }}
         >
-          15 words
+          15
         </ButtonLength>
         <ButtonLength
           onMouseDown={(e) => {
@@ -73,7 +73,7 @@ export default function NavBar() {
             handleChangeWordsLength(20);
           }}
         >
-          20 words
+          20
         </ButtonLength>
         <ButtonLength
           onMouseDown={(e) => {
@@ -82,7 +82,7 @@ export default function NavBar() {
             handleChangeWordsLength(20);
           }}
         >
-          25 words
+          25
         </ButtonLength>
         <ButtonLength
           onMouseDown={(e) => {
@@ -91,7 +91,7 @@ export default function NavBar() {
             handleChangeWordsLength(20);
           }}
         >
-          30 words
+          30
         </ButtonLength>
       </div>
     </div>
