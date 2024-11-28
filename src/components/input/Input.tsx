@@ -48,10 +48,10 @@ export default function Index() {
       setSentence(data.join(" "));
     };
 
-    if (!isPlaying) {
+    if (!isPlaying && game.cursor === 0) {
       generateWords();
     }
-  }, [isPlaying, game]);
+  }, [game, isPlaying]);
 
   useEffect(() => {
     const interval = setTimeout(() => {
@@ -109,6 +109,8 @@ export default function Index() {
 
         setWordsMached(res);
         console.log("game", getGame(), sentence.length);
+      } else {
+        toggleIsPlaying();
       }
     };
 
