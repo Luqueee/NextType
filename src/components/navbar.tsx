@@ -75,6 +75,24 @@ export default function NavBar() {
         >
           20 words
         </ButtonLength>
+        <ButtonLength
+          onMouseDown={(e) => {
+            e.preventDefault();
+
+            handleChangeWordsLength(20);
+          }}
+        >
+          25 words
+        </ButtonLength>
+        <ButtonLength
+          onMouseDown={(e) => {
+            e.preventDefault();
+
+            handleChangeWordsLength(20);
+          }}
+        >
+          30 words
+        </ButtonLength>
       </div>
     </div>
   );

@@ -42,7 +42,7 @@ export default function Index() {
 
       console.log("game", game, useGameStore.use.isPlaying());
       const res = await fetch(
-        `https://random-word-api.herokuapp.com/word?number=${game.words_length}`
+        `https://random-word-api.herokuapp.com/word?number=${game.words_length}&length=5`
       );
       const data = await res.json();
       setSentence(data.join(" "));
