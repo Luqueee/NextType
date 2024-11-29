@@ -1,4 +1,5 @@
 "use client";
+import useGenerateWords from "@/hooks/useGenerateWords";
 import { useGameStoreBase } from "@/stores";
 
 function ButtonLength({
@@ -16,28 +17,28 @@ function ButtonLength({
   );
 }
 
-export default function NavBar() {
-  const { reset, setWordsLength, setIsPlaying } = useGameStoreBase(
+export default function GameBar() {
+  const { reset, setWordsLength, setIsPlaying, game } = useGameStoreBase(
     (state) => state
   );
 
+  const { generateWords } = useGenerateWords();
+
   const handleChangeWordsLength = (length: number) => {
     console.log("length", length);
-
     reset();
-    setIsPlaying(false);
-    setWordsLength(length);
+    generateWords(length);
   };
 
   return (
-    <div className="w-full flex justify-between items-center px-8 py-4">
-      <h1 className="text-4xl">NextType</h1>
+    <div className="w-full flex justify-between items-center  py-4">
       <div className="px-4 py-2 flex gap-4 border rounded-lg">
         <ButtonLength
           onMouseDown={(e) => {
             e.preventDefault();
-
             reset();
+            setIsPlaying(false);
+            generateWords(game.words_length);
           }}
         >
           Restart

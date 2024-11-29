@@ -1,17 +1,15 @@
 "use client";
 
-import useInput from "@/app/hooks/useInput";
 import { useModalStoreBase } from "@/stores";
 import { useGameStore } from "@/stores/gameStore";
 import { useEffect } from "react";
 
 export default function Timer() {
-  const { time, wpm, isPlaying, setTime, setWpm, game, toggleIsPlaying } =
-    useGameStore((state) => state);
+  const { time, wpm, isPlaying, setTime, setWpm, game } = useGameStore(
+    (state) => state
+  );
 
-  const { setIsOpenModalEnd, isOpenModalEnd } = useModalStoreBase();
-
-  const { sentence } = useInput();
+  const { isOpenModalEnd } = useModalStoreBase();
 
   useEffect(() => {
     if (isPlaying && isOpenModalEnd === false) {
@@ -20,13 +18,8 @@ export default function Timer() {
           (game.words_mached.length / 5 / (time / 60)).toFixed(0)
         )
       );
-
-      if (game.cursor === sentence.length) {
-        toggleIsPlaying();
-        setIsOpenModalEnd(true);
-      }
     }
-  }, [game.words, time, isPlaying, game.cursor, sentence, isOpenModalEnd]);
+  }, [game, time, isPlaying]);
 
   useEffect(() => {
     const interval = setTimeout(() => {
