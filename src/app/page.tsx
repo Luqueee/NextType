@@ -1,8 +1,8 @@
 "use server";
 import ModalEndGame from "@/components/modals/ModalEndGame";
 import GameBar from "@/components/GameBar";
-import Input from "@/components/Writter/Input";
-import Timer from "@/components/Writter/Timer";
+import Input from "@/components/writter/Input";
+import Timer from "@/components/writter/Timer";
 
 export default async function Home() {
   return (
