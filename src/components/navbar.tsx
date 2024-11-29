@@ -17,12 +17,15 @@ function ButtonLength({
 }
 
 export default function NavBar() {
-  const { reset, setWordsLength } = useGameStoreBase((state) => state);
+  const { reset, setWordsLength, setIsPlaying } = useGameStoreBase(
+    (state) => state
+  );
 
   const handleChangeWordsLength = (length: number) => {
     console.log("length", length);
 
     reset();
+    setIsPlaying(false);
     setWordsLength(length);
   };
 
@@ -38,6 +41,15 @@ export default function NavBar() {
           }}
         >
           Restart
+        </ButtonLength>
+        <ButtonLength
+          onMouseDown={(e) => {
+            e.preventDefault();
+
+            setWordsLength(2);
+          }}
+        >
+          2
         </ButtonLength>
         <ButtonLength
           onMouseDown={(e) => {
