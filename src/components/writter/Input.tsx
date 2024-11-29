@@ -4,7 +4,7 @@ import createSelectors from "@/app/hooks/selector";
 import useInput from "@/app/hooks/useInput";
 import useSongsKeyboard from "@/hooks/useSongsKeyboard";
 
-export default function Index() {
+export default function Input() {
   const useGameStore = createSelectors(useGameStoreBase);
   const { game } = useGameStore((state) => state);
 
