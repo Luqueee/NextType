@@ -3,6 +3,7 @@ import ModalEndGame from "@/components/modals/ModalEndGame";
 import GameBar from "@/components/GameBar";
 import Input from "@/components/writter/Input";
 import Timer from "@/components/writter/Timer";
+import Shortcuts from "@/components/Shortcuts";
 
 export default async function Home() {
   return (
@@ -15,6 +16,7 @@ export default async function Home() {
         <ModalEndGame />
       </div>
       <GameBar />
+      <Shortcuts />
     </div>
   );
 }

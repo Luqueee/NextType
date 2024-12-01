@@ -1,5 +1,5 @@
 "use client";
-import useGenerateWords from "@/hooks/useGenerateWords";
+import { useGame } from "@/app/hooks";
 import { useGameStoreBase } from "@/stores";
 
 function ButtonLength({
@@ -22,13 +22,7 @@ export default function GameBar() {
     (state) => state
   );
 
-  const { generateWords } = useGenerateWords();
-
-  const handleChangeWordsLength = (length: number) => {
-    console.log("length", length);
-    reset();
-    generateWords(length);
-  };
+  const { handleChangeWordsLength, generateWords } = useGame();
 
   return (
     <div className="w-full flex justify-between items-center  py-4">
